@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #fce4ec; /* Fundo rosa claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Transição de Telas */
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 400px;
+  background: white;
+  padding: 25px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.screen.active {
+  display: flex;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Teclado e Senha */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.keypad button {
+  background: #ffe4e8;
+  border: none;
+  padding: 16px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d81b60;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+/* Presente e Barra de Progresso */
+.gift-box {
+  font-size: 80px;
+  cursor: pointer;
+  margin: 30px 0;
+  user-select: none;
+  transition: transform 0.1s ease;
+}
+
+.gift-box:active {
+  transform: scale(1.15);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #e91e63;
+  transition: width 0.2s;
+}
+
+/* Botões Globais */
+.btn-primary {
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.photo {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 15px;
+}
+
+.letter

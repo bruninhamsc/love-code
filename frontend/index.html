@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para Meu Amor ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ETAPA 1: Teclado de Senha (Data Especial) -->
+  <div id="step-passcode" class="screen active">
+    <h2>Enter the Special Date</h2>
+    <p class="subtitle">DD MM YYYY</p>
+    
+    <div class="code-display" id="codeDisplay">
+      <!-- Corações/Traces que preenchem ao digitar -->
+      <span>_</span><span>_</span><span>_</span><span>_</span><span>_</span><span>_</span><span>_</span><span>_</span>
+    </div>
+
+    <div class="keypad">
+      <button onclick="pressKey('1')">1</button>
+      <button onclick="pressKey('2')">2</button>
+      <button onclick="pressKey('3')">3</button>
+      <button onclick="pressKey('4')">4</button>
+      <button onclick="pressKey('5')">5</button>
+      <button onclick="pressKey('6')">6</button>
+      <button onclick="pressKey('7')">7</button>
+      <button onclick="pressKey('8')">8</button>
+      <button onclick="pressKey('9')">9</button>
+      <button onclick="pressKey('0')">0</button>
+      <button onclick="deleteKey()">←</button>
+    </div>
+  </div>
+
+  <!-- ETAPA 2: Caixinha de Presente para Clicar -->
+  <div id="step-gift" class="screen">
+    <p class="counter" id="tapCounter">Tap to unwrap! 0/21</p>
+    <div class="gift-box" onclick="tapGift()">
+      🎁
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+
+  <!-- ETAPA 3: Carta de Amor / Pop-up -->
+  <div id="step-letter" class="screen">
+    <div class="letter-card">
+      <h3>A Letter for You ❤️</h3>
+      <div class="letter-content">
+        <img src="carta/carta_para_ele.png" alt="carta para meu amor.">
+      </div>
+      <button class="btn-primary" onclick="nextStep('step-media')">Close & Continue ✨</button>
+    </div>
+  </div>
+
+  <!-- ETAPA 4: Imagem/GIF + Player do Spotify -->
+  <div id="step-media" class="screen">
+    <div class="card">
+      <img src="sua-foto.jpg" alt="Nossa Foto" class="photo" />
+      <p class="media-title">Here my love, our song!</p>
+      
+      <!-- Player de Embed do Spotify -->
+      <iframe style="border-radius:12px" 
+        src="https://open.spotify.com/embed/track/SUA_FAIXA_AQUI?utm_source=generator" 
+        width="100%" height="152" frameBorder="0" allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+      </iframe>
+
+      <button class="btn-primary" onclick="nextStep('step-final')">Continue 🦋</button>
+    </div>
+  </div>
+
+  <!-- ETAPA 5: Mensagem Final -->
+  <div id="step-final" class="screen">
+    <div class="final-card">
+      <p>I love you so much and I hope to spend my days with you for the rest of the year ❤️</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
